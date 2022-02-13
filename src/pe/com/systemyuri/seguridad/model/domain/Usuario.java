@@ -5,6 +5,7 @@
  */
 package pe.com.systemyuri.seguridad.model.domain;
 
+import java.util.Objects;
 import pe.com.systemyuri.generico.model.domain.Auditoria;
 import pe.com.systemyuri.generico.model.interfaces.Domain;
 
@@ -182,8 +183,42 @@ public class Usuario extends Auditoria implements Domain{
     public void setVigente(Boolean vigente) {
         this.vigente = vigente;
     }
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.tipo);
+        hash = 41 * hash + Objects.hashCode(this.login);
+        hash = 41 * hash + Objects.hashCode(this.clave);
+        hash = 41 * hash + Objects.hashCode(this.nombreCompleto);
+        hash = 41 * hash + Objects.hashCode(this.personalId);
+        hash = 41 * hash + Objects.hashCode(this.entidadNombre);
+        hash = 41 * hash + Objects.hashCode(this.entidadId);
+        hash = 41 * hash + Objects.hashCode(this.tipoDocumento);
+        hash = 41 * hash + Objects.hashCode(this.numeroDocumento);
+        hash = 41 * hash + Objects.hashCode(this.flagBloqueo);
+        hash = 41 * hash + Objects.hashCode(this.email);
+        hash = 41 * hash + Objects.hashCode(this.vigente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String primaryKey() {
