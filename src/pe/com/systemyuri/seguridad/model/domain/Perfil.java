@@ -5,6 +5,7 @@
  */
 package pe.com.systemyuri.seguridad.model.domain;
 
+import java.util.Objects;
 import pe.com.systemyuri.generico.model.domain.Auditoria;
 import pe.com.systemyuri.generico.model.interfaces.Domain;
 
@@ -86,6 +87,34 @@ public class Perfil extends Auditoria implements Domain{
 
     public void setPerfilPadre(Perfil perfilPadre) {
         this.perfilPadre = perfilPadre;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.nombre);
+        hash = 43 * hash + Objects.hashCode(this.nivel);
+        hash = 43 * hash + Objects.hashCode(this.vigente);
+        hash = 43 * hash + Objects.hashCode(this.perfilPadre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Perfil other = (Perfil) obj;
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return true;
     }
     
     

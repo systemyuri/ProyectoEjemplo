@@ -6,6 +6,7 @@
 package pe.com.systemyuri.seguridad.model.domain;
 
 import java.util.Date;
+import java.util.Objects;
 import pe.com.systemyuri.generico.model.domain.Auditoria;
 import pe.com.systemyuri.generico.model.interfaces.Domain;
 
@@ -56,6 +57,35 @@ public class Asignacion extends Auditoria implements Domain{
         this.vigente = vigente;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.fechaHoraInicio);
+        hash = 41 * hash + Objects.hashCode(this.fechaHoraTermino);
+        hash = 41 * hash + Objects.hashCode(this.vigente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Asignacion other = (Asignacion) obj;
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
     @Override
     public String primaryKey() {
         return getCodigo().esNulo()?"":getCodigo().toString();

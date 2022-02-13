@@ -5,6 +5,7 @@
  */
 package pe.com.systemyuri.seguridad.model.domain;
 
+import java.util.Objects;
 import pe.com.systemyuri.generico.model.domain.Auditoria;
 import pe.com.systemyuri.generico.model.interfaces.Domain;
 
@@ -152,6 +153,40 @@ public class Objeto extends Auditoria implements Domain{
     public String tableName() {
         return "GEN_OBJETO";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.tipo);
+        hash = 41 * hash + Objects.hashCode(this.nombre);
+        hash = 41 * hash + Objects.hashCode(this.url);
+        hash = 41 * hash + Objects.hashCode(this.titulo);
+        hash = 41 * hash + Objects.hashCode(this.nivel);
+        hash = 41 * hash + Objects.hashCode(this.orden);
+        hash = 41 * hash + Objects.hashCode(this.objetoPadre);
+        hash = 41 * hash + Objects.hashCode(this.flagBarraMenu);
+        hash = 41 * hash + Objects.hashCode(this.vigente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Objeto other = (Objeto) obj;
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return true;
+    }
+    
     
     
 }
