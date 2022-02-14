@@ -22,7 +22,7 @@ public class Main {
         usuarios.add(new Usuario(3, "INTERNO", "adelgado", "123", "Angie Delgado", "eespinozar@minjus.gob.pe", true));
         usuarios.add(new Usuario(4, "INTERNO", "psoria", "123", "Percy Soria", "psoria@minjus.gob.pe", true));
         
-        usuarios.add(new Usuario(5, "INTERNO", "msalinas", "123", "Mario Salinas", "msalinas@minjus.gob.pe", true));
+        usuarios.add(new Usuario(5, "INTERNO", "msalinas", "123", "Fernando Manrique", "fmanrique@minjus.gob.pe", true));
         usuarios.add(new Usuario(6, "INTERNO", "cverde", "123", "Cesar Verde", "cverde@minjus.gob.pe", true));
         
         PrintUtil printUtil = new PrintUtil();
