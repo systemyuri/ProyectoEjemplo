@@ -26,6 +26,8 @@ public class Main {
         usuarios.add(new Usuario(6, "INTERNO", "cverde", "123", "Cesar Verde", "cverde@minjus.gob.pe", true));
         usuarios.add(new Usuario(7, "INTERNO", "gmendoza", "123", "Giovanni Mendoza", "gmendoza@minjus.gob.pe", true));
         
+        
+        
         PrintUtil printUtil = new PrintUtil();
         printUtil.printUsuario(usuarios);
     }
